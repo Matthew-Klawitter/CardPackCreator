@@ -110,6 +110,24 @@ namespace CardPackCreator
             }
         }
 
+        private void listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView.SelectedItems.Count > 0)
+            {
+                Card card = (Card)listView.SelectedItems[0].Tag;
+                titleBox.Text = card.Title;
+                setBox.Text = card.Set;
+                descBox.Text = card.Description;
+                facBox.Text = card.Faction;
+                rareBox.Text = card.Rarity;
+                valBox.Text = card.Value.ToString();
+            }
+            else
+            {
+                UpdateLog("Note: Multiple items in the list have been selected. Card data won't be populated in the entry fields for editing.");
+            }  
+        }
+
         public void ReadFile(String path)
         {
             using (StreamReader file = File.OpenText(path))

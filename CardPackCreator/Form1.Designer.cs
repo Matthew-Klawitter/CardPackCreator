@@ -63,6 +63,7 @@
             this.listView.Size = new System.Drawing.Size(356, 194);
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
