@@ -64,6 +64,8 @@ namespace CardPackCreator
                     var item = new ListViewItem(c.ArrayString());
                     item.Tag = c;
                     listView.Items.Add(item);
+
+                    UpdateCount();
                 }
                 else
                 {
@@ -81,6 +83,8 @@ namespace CardPackCreator
                     listView.Items.Remove(item);
                 }
             }
+
+            UpdateCount();
         }
 
         private void toolStripMenuSave_Click(object sender, EventArgs e)
@@ -103,6 +107,7 @@ namespace CardPackCreator
             if (open.ShowDialog() == DialogResult.OK)
             {
                 ReadFile(open.FileName);
+                UpdateCount();
             }
             else
             {
@@ -167,6 +172,11 @@ namespace CardPackCreator
         public void UpdateLog(String message)
         {
             logBox.Text = message;
+        }
+
+        public void UpdateCount()
+        {
+            labelCardCount.Text = "Total Cards: " + listView.Items.Count.ToString();
         }
     }
 }
