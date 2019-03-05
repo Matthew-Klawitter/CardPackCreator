@@ -52,6 +52,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.rareBox = new System.Windows.Forms.ComboBox();
+            this.toolStripMenuLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // 
             this.listView.Location = new System.Drawing.Point(321, 27);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(188, 194);
+            this.listView.Size = new System.Drawing.Size(356, 194);
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             // 
@@ -69,14 +70,15 @@
             this.toolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(521, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(883, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem
             // 
             this.toolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuSave});
+            this.toolStripMenuSave,
+            this.toolStripMenuLoad});
             this.toolStripMenuItem.Name = "toolStripMenuItem";
             this.toolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.toolStripMenuItem.Text = "File";
@@ -110,7 +112,7 @@
             // 
             // removeSelected
             // 
-            this.removeSelected.Location = new System.Drawing.Point(434, 227);
+            this.removeSelected.Location = new System.Drawing.Point(402, 227);
             this.removeSelected.Name = "removeSelected";
             this.removeSelected.Size = new System.Drawing.Size(75, 23);
             this.removeSelected.TabIndex = 4;
@@ -213,7 +215,7 @@
             this.logBox.Multiline = true;
             this.logBox.Name = "logBox";
             this.logBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.logBox.Size = new System.Drawing.Size(492, 69);
+            this.logBox.Size = new System.Drawing.Size(665, 69);
             this.logBox.TabIndex = 17;
             // 
             // label8
@@ -243,11 +245,18 @@
             this.rareBox.Size = new System.Drawing.Size(197, 21);
             this.rareBox.TabIndex = 20;
             // 
+            // toolStripMenuLoad
+            // 
+            this.toolStripMenuLoad.Name = "toolStripMenuLoad";
+            this.toolStripMenuLoad.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuLoad.Text = "Load";
+            this.toolStripMenuLoad.Click += new System.EventHandler(this.toolStripMenuLoad_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 358);
+            this.ClientSize = new System.Drawing.Size(883, 358);
             this.Controls.Add(this.rareBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.logBox);
@@ -302,6 +311,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox rareBox;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuLoad;
     }
 }
 

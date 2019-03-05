@@ -91,8 +91,41 @@ namespace CardPackCreator
                 UpdateLog("Warning: Dialog closed, files not saved!");
             else
             {
-                var path = brwsr.SelectedPath;
-                WriteFile(path);
+                WriteFile(brwsr.SelectedPath);
+            }
+        }
+
+        private void toolStripMenuLoad_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Json files (*.json)|*.json";
+
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                ReadFile(open.FileName);
+            }
+            else
+            {
+                UpdateLog("Warning: Dialog closed, unable to load files!");
+            }
+        }
+
+        public void ReadFile(String path)
+        {
+            using (StreamReader file = File.OpenText(path))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                List<Card> card_list = (List<Card>)serializer.Deserialize(file, typeof(List<Card>));
+                listView.Items.Clear();
+
+                foreach (Card card in card_list)
+                {
+                    var item = new ListViewItem(card.ArrayString());
+                    item.Tag = card;
+                    listView.Items.Add(item);
+                }
+
+                UpdateLog("Successfully loaded data!");
             }
         }
 
